@@ -6,7 +6,7 @@
     "dev": "concurrently \"node server.js\" \"react-scripts start\"",
     "start": "node server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test; node .github/init.js"
   },
   "dependencies": {
     "express": "^4.19.2",
