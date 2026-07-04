@@ -9,7 +9,11 @@ function App() {
     setLoading(true);
     setError(null);
 
-    fetch('http://localhost:5000/api/repos')
+    const API_URL = process.env.NODE_ENV === 'production'
+      ? '/api/repos'
+      : 'http://localhost:5000/api/repos';
+
+    fetch(API_URL)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Server responded with status ${response.status}`);
